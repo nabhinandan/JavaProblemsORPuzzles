@@ -5,11 +5,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+Create by : Abhinandan N
+Problem: Find the phone number from the given shuffeled string and arrange it in assending order.
+Example: I/P: ZVEESENFIROVE O/P: 057
+*/
 public class GivenNumberinStringFindphoneNumber
 {
     static ArrayList<Integer> PhoneNumber1 = new ArrayList<>();
     static ArrayList<Integer> PhoneNumber = new ArrayList<>();
     
+    /*
+    From the stringbuilder deleted the characters which are already identified and converted to number
+    */
     private static void popElements(char[] array, StringBuilder str)
     {
         for(int i = 0; i < array.length; i++)
@@ -18,7 +26,11 @@ public class GivenNumberinStringFindphoneNumber
             str.deleteCharAt(index);
         }
     }
-    
+    /*
+    Iterate through the String builder and identify the unique characters of a number in the Stringbuilder.
+    Example: 'z' char can only be found in 'zero'.
+    add the phone number to the list and delete the characters from the String builder until the Stringbuilder is empty.
+    */
     private static void FindPhoneNumber(StringBuilder str_phoneNumber)
     {
         
@@ -96,6 +108,7 @@ public class GivenNumberinStringFindphoneNumber
         System.out.println("Total Time Taken by looping through String and poping = " + timeElapsed);
     }
     
+    //Add identified phone number to the list
     private static void addPhoneNumber(int count, int phonenumber)
     {
         while(count > 0)
@@ -105,6 +118,12 @@ public class GivenNumberinStringFindphoneNumber
         }
     }
     
+    /*
+    1.Convert String builder to char array.
+    2. Iterate through the Char array and add each char to hashmap and maintain the count of the characters present in the char array.
+    3. find the unique character which can be present in the number, example: 'z' is only present in 'zero'.
+    4. find the number of times each unique char of a number present in the map and add it to the list.
+    */
     private static void FindPhoneNumber1(StringBuilder str_phoneNumber)
     {
         Map<Character,Integer> charCount = new HashMap<>();
