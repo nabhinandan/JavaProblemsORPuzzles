@@ -1,5 +1,10 @@
 package com.sample.String;
 
+/*
+Created by: Abhinandan N
+Problem: Reverse the given String by keeping the special character fixed
+Example I/P: d#,b$g,c$#     O/P: c#,g$b,d$#
+*/
 public class StringReversewithFixedSpecialChar
 {
     public static void main(String[] args)
